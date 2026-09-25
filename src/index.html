@@ -4,10 +4,122 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <title>MP1</title>
     </head>
+
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <nav class="navbar" id = "navbar">
+            <li><a class = "logo" id = "navlogo" href="#tophead">PORTFOLIO</a></li>
+            
+            <ul class="nav-links" id = "navlinks">
+                <li><a id = "port-link" href="#portfolio-section">Portfolio</a></li>
+                <li><a id = "abt-link" href="#about-section">About the Artist</a></li>
+                <li><a id = "comm-link" href="#commission-section">Commission Info</a></li>
+                <li><a id = "cont-link" href="#contacts-section">Contacts</a></li>
+            </ul>
+
+        </nav>
+
+        <section>
+            <header class = "head" id = "tophead">
+                <i class="fa-solid fa-brush icon" ></i>
+                <h2>Welcome to my Page!</h2>
+                <i class="fa-solid fa-brush icon" ></i>
+            </header>
+        </section>
+        
+
+        <div class = "carousel-container" id = "portfolioCarousel">
+            <div class = "carousel-slide"><img src = "assets/img1.png" alt = "Slide 1"></div>
+            <div class = "carousel-slide"><img src = "assets/img2.png" alt = "Slide 2"></div>
+            <div class = "carousel-slide"><img src = "assets/img3.png" alt = "Slide 3"></div>
+            <div class = "carousel-slide"><img src = "assets/img4.png" alt = "Slide 4"></div>
+            <div class = "carousel-slide"><img src = "assets/img5.png" alt = "Slide 5"></div>
+        </div>
+        <button class = "carousel-btn prev" aria-label = "Previous" onclick = "prevCarousel()">&#10094</button>
+        <button class = "carousel-btn next" aria-label = "Next" onclick = "nextCarousel()">&#10095</button>
+
+        <div id="imageModal" class="modal">
+            <span class="modal-close">🗙</span>
+
+            <img class="modal-content" id="modalImage" alt="Enlarged Portfolio View">
+
+            <div class="modal-info">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-caption" id="modalCaption"></p>
+            </div>
+        </div>
+
+        <section id="portfolio-section" class="port-section">
+            <h1>Portfolio</h1>
+
+            <section id = "photos" class = "port-imgs">
+                <div class = "col">
+                    <div class = "portfolio-1"><img src = "assets/portimg1.png" data-title="Arleccino Hoodie Print" data-caption="A practice in monochrome with a hint of saturated red."></div>  
+                    <div class = "portfolio-2"><img src = "assets/portimg2.png" data-title="Boothill Denim Jacket Print" data-caption="Lots of detail in embroidery on the jacket. Painting with digital."></div>
+                </div>
+                
+                <div class = "col">
+                    <div class = "portfolio-3"><img src = "assets/portimg3.png" data-title="Venti Coat Print" data-caption="A flowery composition with a sitting subject, composition heavy."></div>
+                    <div class = "portfolio-4"><img src = "assets/portimg4.png" data-title="Aventurine Cardigan Print" data-caption="A special pose and warm gold details to capture the lavish lifestyle of the character."></div>
+                </div>
+
+                <div class = "col">
+                    <div class = "portfolio-5"><img src = "assets/portimg5.png" data-title="Flins Tech Jacket Print" data-caption="Monochrome in blue, gives greater contrast to the face with lit background."></div>
+                    <div class = "portfolio-6"><img src = "assets/portimg6.png" data-title="Kinich Hoodie Print" data-caption="A silly little art piece with lots of green, lighting study."></div>
+                </div>
+            </section>
+
+        </section>
+
+        <section id = "speedpaint-block" class = "speedpaint-block">
+            <h2 class = "speedpaint-text">Speedpaint Sample</h2>
+            <video class = "video" width = "1080" height = "920" controls>
+                <source src = "assets/Faelight_Illustration_Aketreli_Speedpaint.mp4" type = "video/mp4">
+            </video>
+        </section>
+        
+        <div class = "still-img"><img src = "assets/stillimg.png"></div>
+
+        <section id="about-section" class="about-section">
+            <h2>About the Artist</h2>
+            <p>Just having fun building this website!</p>
+            <div id = "logo-vert" class = "logo-vert"><img src = "assets/logo-assignment.jpg"></div>
+        </section>
+
+        <section id="commission-section" class="comm-section">
+            <h2>Commission Info</h2>
+            <p>DM me to coordinate your request!</p>
+            <div class = "comm-sheet"><img src = "assets/commsheet.png"></div>
+        </section>
+
+        <section id="contacts-section" class="cont-section">
+            <h2>Contact Me!</h2>
+            <div class="email-trans">
+                <i class="fa-solid fa-envelope email-icon" id="emailIcon"></i>
+                <p class="email-text" id="emailText">alee8195@illinois.edu</p>
+            </div>
+        </section>
+
+        <script src="js/main.js"></script> 
+
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
     </body>
+    
+    <section class = "footer-block" id = "footer">
+        <footer>
+            <ul class="social-links">
+                <a href="https://twitter.com">
+                    <img src="assets/x logo.png" alt="Icon Description" width="50" height="50">
+                </a>
+                <a href="https://instagram.com">
+                    <img src="assets/inst.png" alt="Icon Description" width="65" height="55">
+                </a>
+            </ul>
+        </footer>
+    </section>
+    
 </html>

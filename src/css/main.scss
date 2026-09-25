@@ -1,1 +1,383 @@
 /* Your SCSS here. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --favorite-color: #5aa264;
+  --uni-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --dark-color: #000000;
+  --section-color: #126f5b;
+  --transition-speed: 0.3s;
+}
+
+@mixin section-style {
+  padding-left: 8px;
+  font-family: var(--uni-font);
+  text-align: center;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  color: white;
+  scroll-margin-top: 100px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--dark-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  transition: padding var(--transition-speed) ease;
+}
+
+.logo { 
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family:var(--uni-font);
+  transition: font-size var(--transition-speed) ease;
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-family: var(--uni-font);
+  transition: font-size var(--transition-speed) ease;
+  transition: border-bottom var(--transition-speed) ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #37836c;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  overflow: auto;
+  scrollbar-width: none;
+  background-color: var(--dark-color);
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--dark-color);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 10%;
+  display: block;
+  background-color: var(--dark-color);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 66%;
+  transform: translateY(-200%);
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 6px 13px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #f1f1f1;
+  z-index: 9999;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: --favorite-color;
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+.port-imgs {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20;
+}
+
+.col img {
+  width: 100%;
+  margin-bottom: 10px;
+  height: auto;
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.modal-content {
+  margin: 0;
+  display: block;
+  max-width: 60%;
+  max-height: 75vh;
+  padding-bottom: 60px;
+}
+
+.modal-info {
+  padding-right: 30px;
+  padding-bottom: 60px;
+  width: 250px;
+  color: white;
+  font-family: var(--uni-font);
+  text-align: left;
+}
+
+.modal-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.modal-caption {
+  font-size: 18px;
+}
+
+.icon {
+  color: var(--favorite-color);
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.head {
+  gap: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: var(--dark-color);
+  color: white;
+  font-family: var(--uni-font);
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.footer-block img {
+  align-items: center;
+}
+
+.footer-block {
+  text-align: center;
+  padding-top: 20px;
+  background-color: #04121f;
+  height: 100px;
+  width: 100%;
+  align-items: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.port-imgs img {
+  cursor: pointer;
+  transition: var(--transition-speed);
+}
+
+.port-imgs img:hover {
+  opacity: 70%;
+}
+
+.port-section {
+  padding-left: 8px;
+  padding-top: 12px;
+  font-family: var(--uni-font);
+  text-align: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  color: white;
+  scroll-margin-top: 100px;
+  padding-bottom: 10px;
+  background-color: black;
+}
+
+.speedpaint-block {
+  background-color: var(--dark-color);
+  padding-top: 2px;
+}
+
+.speedpaint-text {
+  font-family: var(--uni-font);
+  text-align: center;
+  color: white;
+  background-color: var(--dark-color);
+}
+
+.video {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  overflow: auto;
+  scrollbar-width: none;
+  background-color: var(--dark-color);
+}
+
+.logo-vert img {
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-section {
+  @include section-style;
+  align-content: center;
+  padding-top: 2px;
+  background-color: var(--section-color);
+}
+
+.comm-section {
+  @include section-style;
+  padding-top: 2px;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.comm-section img {
+  width: 40%;
+  height: auto;
+}
+
+.cont-section {
+  @include section-style;
+  padding-top: 10px;
+  background-color: var(--section-color);
+}
+
+.email-trans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.email-icon {
+  font-size: 150px;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.email-text {
+  display: none;
+  font-size: 30px;
+  transition: opacity 0.5s ease;
+}
+
+.still-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.still-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
