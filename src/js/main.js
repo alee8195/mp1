@@ -138,6 +138,7 @@ modal.onclick = function(event) {
     }
 };
 
+// need to commit again, adding comment
 // css transition: email appear 
 const emailIcon = document.getElementById("emailIcon");
 const emailText = document.getElementById("emailText");
