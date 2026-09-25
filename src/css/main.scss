@@ -334,7 +334,9 @@ h1 {
 
 .comm-section img {
   width: 40%;
+  max-height: 460px;
   height: auto;
+  object-fit: contain;
 }
 
 .cont-section {
